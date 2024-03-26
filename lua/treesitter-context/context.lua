@@ -129,6 +129,8 @@ local function trim_contexts(context_ranges, context_lines, trim, top)
 
     local height = util.get_range_height(context_to_trim)
 
+    print(height)
+
     if height <= trim then
       table.remove(context_ranges, idx)
       table.remove(context_lines, idx)
@@ -248,7 +250,7 @@ function M.get(bufnr, winid)
   end
 
   local context_ranges = {} --- @type Range4[]
-  local context_lines = {} --- @type string[][]
+  local context_lines = {}  --- @type string[][]
   local contexts_height = 0
 
   for offset = 0, max_lines do
